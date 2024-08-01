@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+#box1{
+    height: 200px;
+    width: 200px;
+    background-color:red;
+}
+#box2{
+    height: 200px;
+    width: 200px;
+    background-color:rgb(21, 255, 0);
+}
