@@ -3,8 +3,79 @@
     box-sizing: border-box;
     margin: 0;
 }
+html,
 body{
     height: 100%;
     width: 100%;
-    background-color: rgb(1, 8, 15);
+    overflow-x: hidden;
+}
+/* #main{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cursor{
+    position: fixed;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#image{
+    height: 400px;
+    width: 570px;
+}
+#image img{
+    background-position: center;
+
+} */
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    background-image: url(https://media.istockphoto.com/id/1145484204/video/moving-rain-cloudy-with-overcast-sky.jpg?s=640x640&k=20&c=wbiHD5-I6sE3RlkNUp0UXoGFhGW7xpV_372BF7aSRxE=);
+    background-position: center;
+    background-size: cover;
+}
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+#nav h2{
+    font-size: 30px;
+}
+#nav i{
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+#full{
+    position: absolute;
+    top: 0;
+    right: -40%;
+    height: 100%;
+    width: 40%;
+    background-color: #ffffff69;
+    backdrop-filter: blur(10px);
+    padding: 150px 50px;
+}
+#full h4{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+#full i{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
 }

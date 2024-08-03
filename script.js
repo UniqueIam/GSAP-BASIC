@@ -120,29 +120,69 @@
 //     delay:1
 // })
 
-var path = `M 60 180 Q 400 180 790 180`;
-var finalPath = `M 60 180 Q 400 180 790 180`;
+// var path = `M 60 180 Q 400 180 790 180`;
+// var finalPath = `M 60 180 Q 400 180 790 180`;
 
-var string = document.querySelector("#string");
+// var string = document.querySelector("#string");
 
-string.addEventListener("mousemove", function(dets) {
-    path = `M 60 180 Q ${dets.x} ${dets.y} 790 180`
-    console.log(path);
+// string.addEventListener("mousemove", function(dets) {
+//     path = `M 60 180 Q ${dets.x} ${dets.y} 790 180`
+//     console.log(path);
     
-    gsap.to("svg path", {
-        attr: {d: path},
-        duration:0.2,
-        ease:"power3.out"
-    });
-});
+//     gsap.to("svg path", {
+//         attr: {d: path},
+//         duration:0.2,
+//         ease:"power3.out"
+//     });
+// });
 
-string.addEventListener("mouseleave",function(dets){
-    path = finalPath
+// string.addEventListener("mouseleave",function(dets){
+//     path = finalPath
 
-    gsap.to("svg path",{
-        attr:{d:path},
-        duration:1.8,
-        ease:"elastic.out"  
-    })
+//     gsap.to("svg path",{
+//         attr:{d:path},
+//         duration:1.8,
+//         ease:"elastic.out"  
+//     })
+// })
+
+
+// var main = document.querySelector("#main")
+// var cursor = document.querySelector("#cursor")
+
+// main.addEventListener("mousemove",function(event){
+//     gsap.to(cursor,{
+//         x:event.x,
+//         y:event.y,
+//         duration:0.5,
+//         ease:"back.out"
+//     })
+// })
+
+var burger = document.querySelector("#nav i");
+var close = document.querySelector("#full i");
+var t1 = gsap.timeline();
+
+t1.to("#full",{
+    duration:0.5,
+    right:0
 })
 
+t1.from("#full h4",{
+    x:150,
+    duration:0.5,
+    opacity:0,
+    stagger:0.2
+})
+t1.from("#full i",{
+    opacity:0
+})
+
+t1.pause();
+
+burger.addEventListener("click",function(){
+    t1.play();
+})
+close.addEventListener("click",function(){
+    t1.reverse();
+})
