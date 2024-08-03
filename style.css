@@ -2,12 +2,16 @@
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+    color: #fff;
 }
 html,
 body{
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* #main{
     position: absolute;
@@ -34,7 +38,7 @@ body{
 
 } */
 
-#main{
+/* #main{
     height: 100%;
     width: 100%;
     background-color: lightblue;
@@ -78,4 +82,13 @@ body{
     font-size: 30px;
     font-weight: 600;
     cursor: pointer;
+} */
+
+h2{
+    font-size: 60px;
+    /* background-color: red; */
+    overflow: hidden;
+}
+h2 span{
+    display: inline-block;
 }

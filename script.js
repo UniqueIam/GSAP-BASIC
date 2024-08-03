@@ -159,30 +159,76 @@
 //     })
 // })
 
-var burger = document.querySelector("#nav i");
-var close = document.querySelector("#full i");
-var t1 = gsap.timeline();
+//   timeline animation
 
-t1.to("#full",{
-    duration:0.5,
-    right:0
-})
+// var burger = document.querySelector("#nav i");
+// var close = document.querySelector("#full i");
+// var t1 = gsap.timeline();
 
-t1.from("#full h4",{
-    x:150,
-    duration:0.5,
+// t1.to("#full",{
+//     duration:0.5,
+//     right:0
+// })
+
+// t1.from("#full h4",{
+//     x:150,
+//     duration:0.5,
+//     opacity:0,
+//     stagger:0.2
+// })
+// t1.from("#full i",{
+//     opacity:0
+// })
+
+// t1.pause();
+
+// burger.addEventListener("click",function(){
+//     t1.play();
+// })
+// close.addEventListener("click",function(){
+//     t1.reverse();
+// })
+
+// text animation
+
+function breakTheText(){
+var h2 = document.querySelector("h2");
+ var h2Text =h2.innerText;
+
+var splittedText = h2Text.split("");
+var halfValue = Math.floor(splittedText.length/2);
+var clutter = "";
+splittedText.forEach(function(elem,idx){
+   if(idx<halfValue){
+    clutter += `<span class="firstHalf">${elem}</span>`
+   }
+   else{
+    clutter+= `<span class="secondHalf">${elem}</span>`
+   }
+   
+//    else{
+//     console.log(elem)
+//    }
+  })
+  h2.innerHTML = clutter;
+  console.log(h2);
+  
+}
+
+breakTheText();
+
+gsap.from(".firstHalf",{
+    y:50,
+    duration:0.7,
+    delay:0.3,
     opacity:0,
-    stagger:0.2
+    stagger:0.15
 })
-t1.from("#full i",{
-    opacity:0
+gsap.from(".secondHalf",{
+    y:50,
+    duration:0.8,
+    delay:0.1,
+    opacity:0,
+    stagger:-0.15
 })
 
-t1.pause();
-
-burger.addEventListener("click",function(){
-    t1.play();
-})
-close.addEventListener("click",function(){
-    t1.reverse();
-})
